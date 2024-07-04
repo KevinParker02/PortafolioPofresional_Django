@@ -1,0 +1,195 @@
+@import url('fonts.css');
+
+:root{
+    --color: #904212;
+    --color1: #000000;
+    --color2 : #FFFFFF;
+    --color3 : #161E55;
+    --color4: #EFB810;
+    --color5: #7D12F8;
+    --color6: #CB0001;
+    --color7: #552A69;
+    --color8: #343A40;
+    --COLOR9: #6C0817;
+    --color10: #1076C5;
+
+    /* Color para los fondos */
+    --color01: #161a1d;
+    --color02 : #e9ecef;
+
+    /* Color para las letras */
+    --colorA : #FFFFFF;
+    --colorB: #000000;
+    --colorC: #888B8E;
+
+}
+
+body {
+    font-family: 'Nunito', sans-serif !important;
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    background-image: linear-gradient(var(--color02), var(--colorC));
+    color: white;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left img {
+    width: 100px;
+    height: auto;
+}
+
+.right {
+    background-image: linear-gradient(var(--color01), var(--color1));
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.right h1 {
+    color: var(--colorA);
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+form {
+    color: var(--colorA);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+}
+
+.ContactR{
+    font-size: 12px;
+    padding-bottom: 10px;
+    color: var(--color6);
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 8px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.buttonA {
+    margin-top: 10px;
+    padding: 6px;
+    color: var(--colorA);
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: var(--color5);
+    width: 80px;
+}
+
+.buttonA:hover {
+    color: var(--colorA);
+    background-color: var(--color7);
+}
+
+.buttonB {
+    margin-top: 10px;
+    padding: 6px;
+    color: var(--colorA);
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: var(--color6);
+    width: 80px;
+}
+
+.buttonB:hover {
+    color: var(--colorA);
+    background-color: var(--COLOR9);
+}
+
+.row1{
+    padding-bottom: 20px;
+}
+
+.row1 {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-image: linear-gradient(var(--color02), var(--colorC));
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 600px;
+}
+
+
+.buttonC {
+    margin-top: 10px;
+    padding: 6px;
+    color: var(--colorA);
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: var(--color4);
+    width: 80px;
+}
+
+.buttonC:hover {
+    color: var(--colorA);
+    background-color: var(--color);
+}
+
+@media (min-width: 1441px) and (max-width: 2560px){
+    .F1 {
+        width: 200px;
+        height: auto;
+    }
+    
+    .right h1{
+        font-size: 80px;
+    }
+
+    .card{
+        width: 1455px;
+        height: 700px;
+    }
+    .Tx1{
+        padding-top: 22px;
+        font-size: 40px;
+    }
+
+    .btn{
+        font-size: 40px;
+        width: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card{
+        width: 455px;
+    }
+    .Tx1{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card{
+        width: 255px;
+    }
+    .Tx1{
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,62 @@
+{% load bootstrap5 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos Recibidos</title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/custom_lista.css' %}">
+</head>
+<body>
+    {% block content %}
+    <header>
+        <div class="container-fluid cont1 px-0">
+            <nav class="navbar bg-body-tertiary fixed-top">
+                <a href="http://127.0.0.1:8000"><img class="logo" src="{% static 'img/logo-transparente.png' %}" alt="Logo"></a>
+                <span class="navbar-text ms-3 Tit1">Contactos</span>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container-fluid cont2 px-0">
+            <div class="container cont3">
+                <div class="table-responsive T1">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Mensaje</th>
+                                <th scope="col" class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tr">
+                            {% for contacto in contactos %}
+                            <tr>
+                                <td>{{ contacto.nombre }}</td>
+                                <td>{{ contacto.email }}</td>
+                                <td>{{ contacto.mensaje }}</td>
+                                <td class="text-center">
+                                    <a href="{% url 'contacto_detalle' contacto.pk %}" class="btn btn-sm m-1 buttonC">Ver</a>
+                                    <a href="{% url 'contacto_editar' contacto.pk %}" class="btn btn-sm m-1 buttonA">Editar</a>
+            
+                                    <form method="POST" action="{% url 'contacto_eliminar' contacto.pk %}" style="display:inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-sm m-1 buttonB">Eliminar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+</body>
+</html>

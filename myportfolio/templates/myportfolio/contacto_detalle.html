@@ -1,0 +1,28 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="left">
+        <img class="F1" src="{% static 'img/logo-transparente.png' %}" alt="Outlook Logo">
+    </div>
+    <div class="right">
+        <h1 class="Tit1">Detalle Contacto</h1>
+        <div class="row row1">
+            <div class="card shadow-sm p-4">
+                <p class="Tx1"><strong>Nombre:</strong> {{ contacto.nombre }}</p>
+                <p class="Tx1"><strong>Email:</strong> {{ contacto.email }}</p>
+                <p class="Tx1"><strong>Mensaje:</strong> {{ contacto.mensaje }}</p>
+            </div>
+        </div>
+            {% csrf_token %}
+            <div class="Botones">
+                <a href="{% url 'contacto_editar' contacto.pk %}" class="btn btn-primary buttonA">Editar</a>
+                <form method="POST" action="{% url 'contacto_eliminar' contacto.pk %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger buttonB">Eliminar</button>
+                </form>
+                <a href="{% url 'contacto_lista' %}" class="btn btn-secondary buttonC">Lista</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

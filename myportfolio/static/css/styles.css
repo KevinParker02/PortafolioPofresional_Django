@@ -1,0 +1,1012 @@
+/*Importamos el archivo de las fuentes CSS para poder utilizarlas en nuestro proyecto solo con la propiedad font-family: ...*/
+
+@import url('fonts.css');
+
+:root{
+    --color: #FFA559;
+    --color1: #000000;
+    --color2 : #FFFFFF;
+    --color3 : #2D53E5;
+    --color4: #F7E025;
+    --color5: #7D12F8;
+    --color6: #F50C5D;
+
+    /* Color para los fondos */
+    --color01: #161a1d;
+    --color02 : #e9ecef;
+
+    /* Color para las letras */
+    --colorA : #FFFFFF;
+    --colorB: #000000;
+    --colorC: #888B8E;
+
+}
+
+
+/* --------------------------------- Control de las cajas */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 76px;
+    background-color: var(--color1);
+    font-family: 'Nunito', sans-serif !important;
+}
+
+/* ---------------------------------- Aquí estará el CSS de la barra superior */
+
+.navbar{
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link{
+    text-decoration: none;
+    color: var(--colorB);
+    font-size: 200%;    
+}
+
+.logo{
+    height: 180px;
+    width: 180px;
+}
+
+.barra1{
+    background-color: var(--color2);
+}
+
+/* ---------------------------------- Aquí irá todo el contenido de la página (main) */
+.r1{
+    background-color: var(--color1);
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.Titulo{
+    display: flex;
+    justify-content: center;
+    color: var(--colorA);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 520%;
+}
+
+.Info{
+    display: flex;
+    justify-content: center;
+    color: var(--colorA);
+    font-family: 'Roboto Mono', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 160%;
+}
+
+/* ---------------------------------- Sección donde irá mi información */
+.CajaFoto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FotoGit{
+    height: 76%;
+    width: 76%;
+    border-radius: 4%;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+}
+
+.Text1{
+    color: var(--colorA);
+    font-size: 226%;
+}
+
+
+.r2{
+    background-color: var(--color01);
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 14.5px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--color1);
+}
+
+.carDesd{
+    background-color: var(--color01);
+    border-style: dotted;
+    border-width: 3px;
+    border-color: var(--colorC);
+}
+
+
+/* ---------------------------------- Parte de mis repositorios */
+.r3{
+    background-color: var(--color01);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color1);
+}
+
+.cont2{
+    background-color: var(--color2);
+}
+
+.Titulo2{
+    display: flex;
+    justify-content: center;
+    color: var(--colorA);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding-bottom: 10px;
+    font-size: 520%;
+    padding-bottom: 20px;
+}
+
+.Info2{
+    display: flex;
+    justify-content: center;
+    color: var(--colorA);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 200%;
+    padding-bottom: 1%;
+}
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea si es necesario */
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espacio entre las tarjetas */
+}
+
+    /* Estilo para las tarjetas */
+
+.col {
+    box-sizing: border-box; 
+}   
+
+.card1 {
+    margin: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--color2);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+.Titulo3{
+    font-size: 400%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.text-secundary2{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 190%;
+    padding-bottom: 3%;
+}
+
+     /* Aquí van los "iconos" de los lenguajes */
+.card1 .Tecn {
+    /* HTML */
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 170%;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--colorB);
+    border: 1px solid var(--color);
+    border-radius: 4px;
+    transition: all 400ms ease;
+    background: var(--color);
+    padding-left: 3px;
+    padding-right: 3px;
+
+}
+
+/* Específicos de tecnologías COLORES*/
+.card1 .Tecn.HTML {
+    background: var(--color);
+    border-color: var(--color);
+}
+
+.card1 .Tecn.CSS {
+    background: var(--color3);
+    border-color: var(--color3);
+}
+
+.card1 .Tecn.JS {
+    background: var(--color4);
+    border-color: var(--color4);
+}
+
+    /* Efectos de las cajas */
+.card1 .Tecn:hover {
+    /* HTML */
+    color: var(--colorB);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0.4);
+    transform: translateY(-2%);
+}
+
+.card1:hover{
+    box-shadow: 5px 5px 20px rgb(70, 70, 70);
+    transform: translateY(-3%);
+}
+
+.card1 .imgRepos{
+    width: 100%;
+    height: 100%;
+}
+
+.card1 .contenido{
+    text-align: center;
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+    padding-bottom: 5%;
+}
+
+.card1 .contenido p{
+    color: var(--colorC);
+}
+
+/* ---------------------------------- Parte de las habilidades */
+
+.r4{
+    background-color: var(--color01);
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--color1);
+}
+
+.container2 {
+    place-items: center;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 70px;
+}
+
+.Cada_tarj {
+    /* Para hacer que este cuadro de información suba a la imágen */
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.img_tarj {
+    width: 560px;
+    max-width: 560px;
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    border-radius: 24px;
+}
+
+.dato_tarj {
+    width: 450px;
+    background-color: var(--color2);
+    padding: 24px 32px;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 16px;
+    position: absolute;
+    bottom: -144px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+}
+
+.titulo_tarj {
+    display: flex;
+    justify-content: center;
+    color: var(--colorC);
+    font-size: 300%;
+    margin-bottom: 10px;
+}
+
+.info_tarj {
+    color: var(--colorB);
+    font-size: 195%;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Animación de las tarjetas */
+.Cada_tarj:hover .dato_tarj {
+    /* forwards ayudará a mantener los estilos una vez finalizado */
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.Cada_tarj:hover {
+    box-shadow: 5px 5px 20px rgb(70, 70, 70);
+    animation: remove-overflow 2s forwards;
+}
+
+.Cada_tarj:not(:hover) {
+    animation: show-overflow 2s forwards;
+}
+
+.Cada_tarj:not(:hover) .dato_tarj {
+    animation: remove-data 1s forwards;
+}
+
+/* Definimos la acción how-data y remove-overflow */
+@keyframes show-data {
+    50% {
+        transform: translateY(-160px);
+    }
+
+    100% {
+        transform: translateY(-112px);
+    }
+}
+
+@keyframes remove-overflow {
+    to {
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data {
+    0% {
+        transform: translateY(-112px);
+    }
+
+    50% {
+        transform: translateY(-160px);
+    }
+
+    100% {
+        transform: translateY(.30px);
+    }
+}
+
+@keyframes show-overflow {
+    0% {
+        overflow: initial;
+        pointer-events: none;
+    }
+
+    50% {
+        overflow: hidden;
+    }
+}
+
+/* ---------------------------------- Certificados */
+/* Tamaño de las cajas de los certificados */
+.r5{
+    background-color: var(--color01);
+    padding-top: 40px;
+    border-bottom: 1px solid var(--color1);
+}
+
+
+.card2 {
+    margin: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--color2);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+.card2:hover{
+    box-shadow: 5px 5px 20px rgb(70, 70, 70);
+    transform: translateY(-3%);
+}
+
+.card2 .imgRepos{
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---------------------------------- Formulario */
+.r6{
+    background-color: var(--color1);
+    padding-top: 40px;
+    border-bottom: 1px solid var(--color1);
+    padding-bottom: 10px;
+}
+
+.Formulario{
+    background-color: var(--color02);
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+}
+
+.ContacT{
+    font-size: 300%;
+}
+.ContactR{
+    font-size: 200%;
+}
+
+/* ---------------------------------- Pie de págnia (Final) */
+.r7{
+    background-color: var(--color2);
+    display: flex;
+    text-align: center;
+}
+
+.ico1{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    justify-content: space-between;
+    font-size: 360%;
+    color: var(--color1);
+    transition: color 400ms ease;
+}
+
+.ico-anim:hover {
+    color: var(--color6);
+    transition: color 400ms ease;
+}
+.fa-linkedin:hover {
+    color: var(--color3);
+    transition: color 400ms ease;
+}
+.ico-git:hover {
+    color: var(--colorC);
+    transition: color 400ms ease;
+}
+
+/* ---------------------------------- Responsive */
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+    body{
+        padding-top: 130px;
+    }
+    
+    .logo{
+        height: 140px;
+        width: 140px;
+    }
+    .nav-link{
+        font-size: 30px;
+    }
+    .Titulo{
+        font-size: 100px;
+    }
+    .text-secundary{
+        font-size: 26px;
+    }
+    /* Lo que viene después del titulo principal */
+    .FotoGit{
+        height: 75%;
+        width: 75%;
+    }
+    .Text1{
+        font-size: 32px;
+    }
+
+    .card1{
+        max-width: 700px;
+        max-height: 1050px;
+        margin-bottom: 25px; 
+    }
+
+    .r3{
+        padding-top: 20px;
+        padding-bottom: 90px;
+    }
+    
+    .card1 .Tecn{
+        font-size: 24px;
+    }
+    /* Parte de los titulos */
+    .Titulo2{
+        padding-top: 30px;
+        font-size: 95px;
+        padding-bottom: 50px;
+    }
+    .Info2{
+        font-size: 35px;
+        padding-bottom: 40px;
+    }
+    .Titulo3{
+        font-size: 52px;
+    }
+    .text-secundary2{
+        font-size: 35px;
+    }
+    /* Habilidades */
+    .img_tarj {
+        width: 600px;
+        max-width: 600px;
+        border-radius: 24px;
+    }
+    .titulo_tarj{
+        font-size: 63px;
+    }
+    .dato_tarj{
+        width: 560px;
+    }
+    .info_tarj{
+        font-size: 30px;
+    }
+
+    .r4{
+        padding-bottom: 90px;
+    }
+
+    /* Certificados */
+    .card2 {
+        max-width: 730px;
+        max-height: 545px;
+        margin-bottom: 25px; 
+    }
+
+    .r5{
+        padding-bottom: 60px;
+    }
+
+    /* Contacto */
+    .Caja2{
+        max-width: 50%;
+        margin: auto;
+    }
+
+    .r6{
+        padding-bottom: 90px;
+    }
+
+    .form-label{
+        font-size: 45px;
+    }
+    .ContactR{
+        font-size: 37px;
+    }
+    .btn{
+        font-size: 45px;
+    }
+    .ico1{
+        font-size: 500%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .logo{
+        height: 70px;
+        width: 70px;
+    }
+    .nav-link{
+        font-size: 16px;
+    }
+    .Titulo{
+        font-size: 50px;
+    }
+    .text-secundary{
+        font-size: 14px;
+    }
+    /* Lo que viene después del titulo principal */
+    .FotoGit{
+        height: 85%;
+        width: 85%;
+    }
+    .Text1{
+        font-size: 18px;
+    }
+
+    .card1{
+        max-width: 400px;
+        max-height: 750px;
+        margin-bottom: 25px; 
+    }
+
+    .r3{
+        padding-top: 20px;
+        padding-bottom: 60px;
+    }
+
+    .card1 .Tecn{
+        font-size: 16px;
+    }
+    /* Parte de los titulos */
+    .Titulo2{
+        font-size: 55px;
+    }
+    .Info2{
+        font-size: 18px;
+    }
+    .Titulo3{
+        font-size: 32px;
+    }
+    .text-secundary2{
+        font-size: 15px;
+    }
+    /* Habilidades */
+    .img_tarj {
+        width: 300px;
+        max-width: 300px;
+        border-radius: 24px;
+    }
+
+    .r4{
+        padding-bottom: 50px;
+    }
+
+    .titulo_tarj{
+        font-size: 23px;
+    }
+    .dato_tarj{
+        width: 240px;
+    }
+    .info_tarj{
+        font-size: 14px;
+    }
+
+    /* Certificados */
+    .card2 {
+        max-width: 380px;
+        max-height: 285px;
+        margin-bottom: 25px; 
+    }
+
+    .r5{
+        padding-bottom: 20px;
+    }
+
+    /* Contacto */
+    .r6{
+        padding-bottom: 30px;
+    }
+
+    .Caja2{
+        max-width: 50%;
+        margin: auto;
+    }
+
+    .form-label{
+        font-size: 19px;
+    }
+    .ContactR{
+        font-size: 16px;
+    }
+    .btn{
+        font-size: 19px;
+    }
+    .ico1{
+        font-size: 250%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .logo {
+        height: 60px;
+        width: 60px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .Titulo {
+        font-size: 45px;
+    }
+
+    .text-secundary {
+        font-size: 12px;
+    }
+
+    /* Lo que viene después del titulo principal */
+    .FotoGit {
+        height: 70%;
+        width: 70%;
+    }
+
+    .Text1 {
+        font-size: 13px;
+    }
+
+    .card1{
+        max-width: 280px;
+        max-height: 630px;
+    }
+
+    .card1 .Tecn {
+        font-size: 13px;
+    }
+
+    /* Parte de los titulos */
+    .Titulo2 {
+        font-size: 48px;
+    }
+
+    .Info2 {
+        font-size: 16px;
+    }
+
+    .Titulo3 {
+        font-size: 28px;
+    }
+
+    .text-secundary2 {
+        font-size: 13px;
+    }
+
+    .Caja2{
+        max-width: 50% ;
+        margin: auto;
+    }
+
+    /* Habilidades */
+    .img_tarj {
+        width: 260px;
+        max-width: 260px;
+        border-radius: 24px;
+    }
+
+    .titulo_tarj {
+        font-size: 21px;
+    }
+
+    .dato_tarj {
+        width: 240px;
+    }
+
+    .info_tarj {
+        font-size: 13px;
+    }
+
+    /* Certificados */
+    .card2 {
+        max-width: 330px;
+        max-height: 245px;
+        margin-bottom: 25px;
+    }
+
+    /* Contacto */
+    .form-label {
+        font-size: 16px;
+    }
+
+    .Caja2{
+        max-width: 60%;
+        margin: auto;
+    }
+
+    .ContactR {
+        font-size: 13px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    .ico1 {
+        font-size: 170%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        height: 60px;
+        width: 60px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .Titulo {
+        font-size: 42px;
+        padding-bottom: 12px;
+    }
+
+    .text-secundary {
+        font-size: 8px;
+    }
+
+    /* Lo que viene después del titulo principal */
+    .FotoGit {
+        height: 90%;
+        width: 90%;
+    }
+
+    .Text1 {
+        font-size: 7px;
+    }
+    .DescGit{
+        margin: -20px;
+        padding-bottom: 20px;
+    }
+    
+    .card1{
+        max-width: 210px;
+        max-height: 380px;
+    }
+
+    .card1 .Tecn {
+        font-size: 13px;
+    }
+
+    /* Parte de los titulos */
+    .Titulo2 {
+        font-size: 33px;
+    }
+
+    .Info2 {
+        font-size: 12px;
+    }
+
+    .Titulo3 {
+        font-size: 23px;
+    }
+
+    .text-secundary2 {
+        font-size: 11px;
+    }
+
+    .card1 .Tecn {
+        font-size: 10px;
+    }
+
+    /* Habilidades */
+    .img_tarj {
+        width: 190px;
+        max-width: 190px;
+        border-radius: 24px;
+    }
+
+    .titulo_tarj {
+        font-size: 15px;
+    }
+
+    .dato_tarj {
+        width: 180px;
+    }
+
+    .info_tarj {
+        font-size: 8px;
+    }
+    /* Certificados */
+    .card2 {
+        max-width: 310px;
+        max-height: 225px;
+        margin-bottom: 25px;
+    }
+    /* Contacto */
+    .form-label {
+        font-size: 16px;
+    }
+
+    .ContactR {
+        font-size: 13px;
+    }
+
+    .Caja2{
+        max-width: 60%;
+        margin: auto;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    .ico1 {
+        font-size: 170%;
+    }
+}
+
+@media (max-width: 550px) {
+    body{
+        padding-top: 60px;
+    }
+
+    .logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .r1{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .Titulo {
+        font-size: 37px;
+    }
+
+    .text-secundary {
+        font-size: 10px;
+    }
+
+    /* Lo que viene después del titulo principal */
+    .FotoGit {
+        height: 60%;
+        width: 60%;
+    }
+
+    .Text1 {
+        font-size: 11px;
+    }
+    .DescGit{
+        margin: -20px;
+    }
+    .container1 {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card1{
+        max-width: 240px;
+        max-height: 410px;
+    }
+
+    .card1 .Tecn {
+        font-size: 14px;
+    }
+
+    /* Parte de los titulos */
+    .Titulo2 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .Info2 {
+        font-size: 15px;
+    }
+
+    .Titulo3 {
+        font-size: 23px;
+    }
+
+    .text-secundary2 {
+        font-size: 11px;
+    }
+
+    .card1 .Tecn {
+        font-size: 10px;
+    }
+
+    /* Habilidades */
+    .img_tarj {
+        width: 225px;
+        max-width: 225px;
+        border-radius: 24px;
+    }
+
+    .titulo_tarj {
+        font-size: 20px;
+    }
+
+    .dato_tarj {
+        width: 210px;
+    }
+
+    .info_tarj {
+        font-size: 10px;
+    }
+
+    /* Certificados */
+    .card2 {
+        max-width: 290px;
+        max-height: 215px;
+        margin-bottom: 25px;
+    }
+    /* Contacto */
+    .form-label {
+        font-size: 14px;
+    }
+
+    .ContactR {
+        font-size: 11px;
+    }
+
+    .Caja2{
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+
+    .ico1 {
+        font-size: 130%;
+    }
+}

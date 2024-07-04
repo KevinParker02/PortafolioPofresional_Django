@@ -1,0 +1,40 @@
+{% load bootstrap5 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    {% block extra_head %}
+    {% endblock %}
+    <title>{% block title %}Login{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <div class="left">
+        <a href="http://127.0.0.1:8000/"><img class="F1" src="{% static 'img/logo-transparente.png' %}" alt="Outlook Logo"></a>
+    </div>
+    <div class="right">
+        <h1>¡Bienvenido!</h1>
+        <form form id="myForm" method="POST" class="needs-validation" novalidate>
+            {% csrf_token %}
+            <label for="username" class="form-label ContacT">Usuario:</label>
+            <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp">
+            <div id="userERROR" class="text-danger ContactR"></div>
+            <span></span>
+            <label for="password" class="form-label ContacT">Contraseña:</label>
+            <input type="password" id="password" name="password">
+            <div id="contraERROR" class="text-danger ContactR"></div>
+            <span></span>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+    {% endblock %}
+    {% bootstrap_javascript %}
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

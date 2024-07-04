@@ -1,0 +1,118 @@
+@import url('fonts.css');
+
+:root{
+    --color: #904212;
+    --color1: #000000;
+    --color2 : #FFFFFF;
+    --color3 : #161E55;
+    --color4: #EFB810;
+    --color5: #7D12F8;
+    --color6: #CB0001;
+    --color7: #552A69;
+    --color8: #343A40;
+    --COLOR9: #6C0817;
+    --color10: #1076C5;
+
+    /* Color para los fondos */
+    --color01: #161a1d;
+    --color02 : #e9ecef;
+
+    /* Color para las letras */
+    --colorA : #FFFFFF;
+    --colorB: #000000;
+    --colorC: #888B8E;
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color01);
+}
+
+.navbar {
+    background-image: linear-gradient(var(--color02), var(--colorC));
+    padding: 10px 20px;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: left;
+}
+
+.navbar img.logo {
+    height: 50px;
+}
+
+.Tit1 {
+    margin: 0;
+    color: var(--colorB);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.table{
+    background-color: var(--color2);
+}
+
+.container-fluid.cont2 {
+    padding-top: 70px;
+}
+
+.table-responsive {
+    margin-top: 60px;
+}
+
+.table-hover .table-dark th {
+    background-color: var(--color8);
+    color: var(--colorA);
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--color02);
+}
+
+.text-center .btn {
+    margin: 2px;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.buttonA {
+    color: var(--colorA);
+    background-color: var(--color5);
+}
+
+.buttonA:hover {
+    color: var(--colorA);
+    background-color: var(--color7);
+}
+
+.buttonB {
+    color: var(--colorA);
+    background-color: var(--color6);
+}
+
+.buttonB:hover {
+    color: var(--colorA);
+    background-color: var(--COLOR9);
+}
+
+.buttonC {
+    color: var(--colorA);
+    background-color: var(--color4);
+}
+
+.buttonC:hover {
+    color: var(--colorA);
+    background-color: var(--color);
+}
+
+@media (max-width: 576px) {
+    .navbar h2 {
+        font-size: 20px;
+    }
+    .table-responsive {
+        margin-top: 10px;
+    }
+}

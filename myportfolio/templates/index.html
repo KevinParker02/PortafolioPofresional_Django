@@ -1,0 +1,235 @@
+
+{% load bootstrap5 %}
+{% load static %}
+{% bootstrap_javascript %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <!-- bootstrap 5.3 -->
+    {% bootstrap_css %}
+    <!-- Conexión para los iconos ONLINE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Mi Portafolio</title>
+</head>
+<body>
+    <!-- Tendrá el NavBar -->
+    <header>
+        <div class="container-fluid cont1 py-0 px-0">
+            <section class="col-xl-12 col-sm-12 col-xs-12">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary py-0 fixed-top">
+                    <div class="container-fluid barra1 px-4 py-2">
+                        <a href="http://127.0.0.1:8000/accounts/login/"><img class="logo" src="{% static 'img/logo.png' %}" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                        </button>
+                        <div class="collapse navbar-collapse py-2 px-2" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link" href="#Sobre_mi">Sobre mí</a>
+                                <a class="nav-link" href="#Repositorio">Proyectos</a>
+                                <a class="nav-link" href="#Habilidad">Habilidades</a>
+                                <a class="nav-link" href="#Certificados">Certificados</a>
+                                <a class="nav-link" href="#Contacto">Contactame</a>
+                                <a class="nav-link" href="{% url 'contacto_lista' %}">Mensajes ---➤</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+        </div>
+    </header>
+
+    <!-- Tendrá el contenido de la página -->
+    <main>
+        <div class="container-fluid cont2">
+            <!-- Aquí irá mi nombre y perfil -->
+            <div class="row r1">
+                <section class="col-xl-12 col-sm-12 col-xs-12">
+                    <h1 class="Titulo">Kevin Vivanco</h1>
+                </section>
+                <section class="col-xl-12 col-sm-12 col-xs-12">
+                    <p class="Info DescGit"><strong><span id="bio" class="text-secundary"></span></strong></p>
+                </section>
+            </div>
+    
+            <div class="row r2" id="Sobre_mi">
+                <section class="col-xl-3 col-sm-3 col-xs-12 pt-5">
+                    <!-- Aquí importaré mi foto de GitHub -->
+                    <div id="avatar-container" class="CajaFoto">
+                        <img class="FotoGit" id="avatar" src="{% static 'img/avatar.png' %}" alt="Avatar">
+                    </div>
+                </section>
+                <section class="col-xl-9 col-sm-9 col-xs-12 pt-5 desc">
+                    <!-- Pequeña descripción de mí -->
+                    <div class="card carDesd">
+                        <div class="card-body">
+                            <span class="Text1">¡Hola! Soy un pobre y triste estudiante que está puliendo sus habilidades
+                                como desarrollador front-end, pero ¿sabes qué es eso, no? 'Desarrollador front-end'. A ver,
+                                te explico...
+                            </span>
+                            <br>
+                            <br>
+                            <span class="Text1"> Un desarollador front-end es el encargado de todo lo que puedes ver en un
+                                sitio web. Desde el diseño, los estilos e incluso animaciones del mismo. Básicamente hace
+                                que este luzca bien y sea agradable a la vista de los usuarios (o en teoría debería ser
+                                así). ¿Suena bien, no? Pero a veces te carcome la paciencia.
+                            </span>
+                            <br>
+                            <br>
+                            <span class="Text1">
+                                ¿Algo más sobre mí? Me gusta pasar el tiempo recorriendo lugares y también tomar fotografías
+                                por si no funciona lo de 'Desarrollador front-end', ya tendría otra alternativa de ingresos.
+                            </span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+    
+            <div class="row r3" id="Repositorio">
+                <!-- Aquí irán el título de la sección -->
+                <section class="col-xl-12 col-sm-12 col-xs-12 pt-4 pb-3">
+                    <h1 class="Titulo2">Algunos proyectos...</h1>
+                    <p>
+                    <p class="Info2">Repositorios 🠺<span id="repository" class="NumRepos"></span>🠸</p>
+                    </p>
+                </section>
+                <!-- Parte de los repositorios -->
+                <section class="container container1">   
+                    {% for proyecto in proyectos %}
+                        <div class="card card1">
+                                <figure>
+                                <a href="{% url 'proyecto_detalle' proyecto.pk %}">
+                                <img class="imgRepos" src="{{ proyecto.imagen.url }}">
+                                </a>
+                                </figure>
+                            <div class="contenido">
+                                <h3 class="Titulo3">{{ proyecto.titulo }}</h3>
+                            <p class="text-secundary2">{{ proyecto.descripcion }}</p>
+                                {% for tecnologia in proyecto.tecnologias.all %}
+                                    <a class="Tecn {{ tecnologia.nombre }}">{{ tecnologia.nombre }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </section>
+            </div>
+
+            <div class="row r4" id="Habilidad">
+                <!-- Titulo -->
+                <section class="col-xl-12 col-sm-12 col-xs-12 pt-5">
+                    <h1 class="Titulo2">Habilidades Tecnológicas</h1>
+                </section>
+                <!-- Aquí irán las habilidades (En tarjetas) -->
+                <section class="col-xl-12 col-sm-12 col-xs-12 pt-4 px-5 container container2">
+                    {% for habilidad in habilidades %}
+                        <article class="Cada_tarj">
+                            <!-- Llamo a los colores -->
+                            <style>
+                                .color { color: var(--color); }
+                                .color3 { color: var(--color3); }
+                                .color4 { color: var(--color4); }
+                                .color5 { color: var(--color5); }
+                            </style>
+                            <img src="{{ habilidad.imagen.url }}" alt="image" class="img_tarj">
+                            <div class="dato_tarj">
+                                <span class="titulo_tarj {% if habilidad.tituloHab == 'HTML' %}color
+                                                        {% elif habilidad.tituloHab == 'CSS' %}color3
+                                                        {% elif habilidad.tituloHab == 'Java Script' %}color4
+                                                        {% elif habilidad.tituloHab == 'Bootstrap' %}color5
+                                                        {% elif habilidad.tituloHab == 'Python' %}color3
+                                                        {% elif habilidad.tituloHab == 'Java' %}color
+                                                        {% endif %}">{{ habilidad.tituloHab }}</span>
+                                <h2 class="info_tarj">{{ habilidad.descripcion }}</h2>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </section>
+    
+            </div>
+    
+            <div class="row r5" id="Certificados">
+                <!-- Aquí irán mis "Certificados" -->
+                <section class="col-xl-12 col-sm-12 col-xs-12 pb-3">
+                    <h1 class="Titulo2">Certificados</h1>
+                </section>
+                <section class="col-xl-12 col-sm-12 col-xs-12  pb-5 container container1">
+                    {% for certificado in certificados %}
+                        <div class="card card2">
+                            <figure>
+                                <img src="{{certificado.imagen.url}}" alt="" class="imgRepos">
+                            </figure>
+                        </div>
+                    {% endfor %}
+                </section>
+            </div>
+    
+            <div class="row r6" id="Contacto">
+                <!-- Contactame -->
+                <section class="col-xl-12 col-sm-12 col-xs-12 pb-3">
+                    <h1 class="Titulo Titulo2">Contactame</h1>
+                </section>
+                <!-- Formulario -->
+                <section class="col-xl-12 col-sm-12 col-xs-12 pb-5 px-5 Caja2">
+                    <div class="card Formulario">
+                        <div class="card-body">
+                            <form id="myForm" method="POST" action="{% url 'contacto_nuevo' %}" class="needs-validation" novalidate>
+                                {% csrf_token %}
+                                <!-- Nombre completo -->
+                                <div class="mb-3">
+                                    <label for="exampleFormControlInput1" class="form-label ContacT pb-2">Ingrese su
+                                        nombre</label>
+                                    <input type="Text" class="form-control" id="name" name="nombre" placeholder="">
+                                    <!-- Mensaje de error si el campo está vacío -->
+                                    <div id="nombreERROR" class="text-danger ContactR"></div>
+                                </div>
+                                <!-- Correo -->
+                                <div class="mb-3 pb-3">
+                                    <label for="exampleInputEmail1" class="form-label ContacT pb-2">Correo</label>
+                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                                    <div id="correoERROR" class="text-danger ContactR"></div>
+                                </div>
+                                <!-- Mensaje -->
+                                <div class="mb-3 pb-3">
+                                    <label for="exampleFormControlTextarea1" class="form-label ContacT pb-2">Motivo</label>
+                                    <textarea class="form-control" id="message" name="mensaje" rows="3" placeholder=""></textarea>
+                                </div>
+                                <button type="submit" value="Enviar" id="button" class="btn btn-success ContacT">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Tendrá el pié de página -->
+    <footer>
+        <div class="container-fluid cont3">
+            <div class="row r7">
+                <section class="col-xl-12 col-sm-12 col-xs-12">
+                  <a class="link m-3" href="https://instagram.com/"><i class="fa-brands fa-instagram ico1 ico-anim"></i></a>
+                  <!-- Cada i tendrá como nombred de calse i1 para modificar su color -->
+                  <a class="link m-3" href="https://www.linkedin.com/in/kv-02a960292/"><i class="fa-brands ico1 fa-linkedin"></i></a>
+                  <a class="link m-3" href="https://github.com/KevinParker02"><i class="fa-brands fa-github ico1 ico-git"></i></a>
+                </section>
+            </div>
+        </div>
+    </footer>
+<!-- Scripts personalizados -->
+<script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

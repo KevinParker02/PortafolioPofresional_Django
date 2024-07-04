@@ -1,0 +1,97 @@
+@import url('fonts.css');
+
+:root{
+    --color: #FFA559;
+    --color1: #000000;
+    --color2 : #FFFFFF;
+    --color3 : #2D53E5;
+    --color4: #F7E025;
+    --color5: #7D12F8;
+    --color6: #F50C5D;
+    --color7: #2B064D;
+
+    /* Color para los fondos */
+    --color01: #161a1d;
+    --color02 : #e9ecef;
+
+    /* Color para las letras */
+    --colorA : #FFFFFF;
+    --colorB: #000000;
+    --colorC: #888B8E;
+
+}
+
+body {
+    font-family: 'Nunito', sans-serif !important;
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    background-image: linear-gradient(var(--color02), var(--colorC));
+    color: white;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left img {
+    width: 100px;
+    height: auto;
+}
+
+.right {
+    background-image: linear-gradient(var(--color01), var(--color1));
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.right h1 {
+    color: var(--colorA);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form {
+    color: var(--colorA);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+}
+
+.ContactR{
+    font-size: 12px;
+    padding-bottom: 10px;
+    color: var(--color6);
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 8px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: var(--color5);
+}
+
+button:hover {
+    background-color: var(--color7);
+}

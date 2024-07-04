@@ -1,0 +1,42 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="left">
+        <img class="F1" src="{% static 'img/logo-transparente.png' %}" alt="Outlook Logo">
+    </div>
+    <div class="right">
+        <h1>Editar Contacto</h1>
+        <form form id="myForm" method="POST" class="needs-validation" novalidate>
+            {% csrf_token %}
+                <label for="id_nombre" class="form-label ContacT">Usuario:</label>
+                {{ form.nombre }}
+                <div id="userERROR" class="text-danger ContactR">
+                    {% for error in form.nombre.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+            
+                <label for="email" class="form-label ContacT pb-2">Correo:</label>
+                {{ form.email }}
+                <div id="correoERROR" class="text-danger ContactR">
+                    {% for error in form.email.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+        
+                <label for="message" class="form-label ContacT pb-2">Motivo:</label>
+                {{ form.mensaje }}
+                <div id="motivoERROR" class="text-danger ContactR">
+                    {% for error in form.mensaje.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+
+            <div class="Botones">
+                <button type="submit" class="btn btn-primary buttonA">Guardar</button>
+                <a href="{% url 'contacto_lista' %}" class="btn btn-secondary buttonB">Cancelar</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
